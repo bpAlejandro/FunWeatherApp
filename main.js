@@ -23,13 +23,17 @@ const weatherInfo = async function (city){
     let rain = jsonResponse.rain;
 
     //rain object in the DATA has a property called 1h and cannot be reached - This is a transformation of the property name to be achievable
-    let newRain = Object.defineProperty(
-        {},
-        'mm',
-        Object.getOwnPropertyDescriptor(jsonResponse.rain, '1h')
-      );
-      
+    if(rain === undefined) {
+        rain = 0;
+    } else {
+        let newRain = Object.defineProperty(
+            {},
+            'mm',
+            Object.getOwnPropertyDescriptor(jsonResponse.rain, '1h')
+          );
+          
     rain = newRain.mm;
+    };
 
     let sentenceA = '';
     if (rain === 0) {
