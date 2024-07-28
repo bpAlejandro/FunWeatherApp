@@ -1,4 +1,3 @@
-
 /*
 URL example: https://api.openweathermap.org/data/2.5/weather?q= + CARDIFF + &units=metric&appid= + APIKEY
 This will get the data using metric as units so we could use degrees.
@@ -32,12 +31,14 @@ const weatherInfo = async function (city){
             Object.getOwnPropertyDescriptor(jsonResponse.rain, '1h')
           );
           
-    rain = newRain.mm;
-    };
+        rain = newRain.mm;
+    }
+    
+
 
     let sentenceA = '';
     if (rain === 0) {
-        sentenceA = ' However, no rain at first sight.'; 
+        sentenceA = ' No rain at first sight.'; 
         //document.querySelector('.rain').innerHTML = ''
     } else if (rain>0 && rain<=5){
         sentenceA = ' However, it is raining now. Put at least a waterproof jacket on top or take an umbrella.';
@@ -53,7 +54,7 @@ const weatherInfo = async function (city){
     let sentenceB = '';
     if(temp <= 3) {
 
-        sentenceB = ' However, don\'t go out, it is too cold.';
+        sentenceB = ' Don\'t go out, it is too cold. There is no layers than can save you...';
 
     } else if (temp > 3, temp <= 10) {
 
@@ -87,7 +88,7 @@ const weatherInfo = async function (city){
     let sentenceC = '';
     if(speed <= 10) {
 
-    sentenceC = ' You can also wear a hat or a fancy pamela if you want as there is just a gentle breeze outside.';
+    sentenceC = ' There is just a gentle breeze outside so you can also wear a hat or a fancy pamela if you want.';
 
     } else if (speed>10 && speed<=14) {
 
@@ -110,10 +111,10 @@ const weatherInfo = async function (city){
 
 
     // checker in console
-    console.log(name, temp, speed, rain, sky);
+    //console.log(name, temp, speed, rain, sky);
 
     //Display data on HTML classes
-    document.querySelector('.city').innerHTML = 'At the moment in ' + name + '.'
+    document.querySelector('.city').innerHTML = 'Right now in ' + name + '...'
     document.querySelector('.cloth').innerHTML = sentenceB + sentenceA + sentenceC
     document.querySelector('.temp').innerHTML = '+ Temperature is around ' + temp + '°C.'
     document.querySelector('.description').innerHTML = '+ how\'s the sky?  ' + sky + '.'
@@ -134,5 +135,3 @@ document.querySelector('.search button').addEventListener("click", function() {
     search();
     weatherInfo(city);
 });
-
-
