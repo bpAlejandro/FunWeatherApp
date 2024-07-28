@@ -1,3 +1,4 @@
+
 /*
 URL example: https://api.openweathermap.org/data/2.5/weather?q= + CARDIFF + &units=metric&appid= + APIKEY
 This will get the data using metric as units so we could use degrees.
@@ -78,7 +79,7 @@ const weatherInfo = async function (city){
 
     } else if (temp > 35) {
 
-        sentenceB = ' Stay at home, you can\'t go out naked...';
+        sentenceB = ' It is too hot! Stay at home, you can\'t go out naked...';
 
     };
 
@@ -86,21 +87,29 @@ const weatherInfo = async function (city){
 
     //wind Ranges - Return values to variable we state to create the sentence.
     let sentenceC = '';
-    if(speed <= 10) {
+    if(speed <= 10 && temp > 35) {
 
-    sentenceC = ' There is just a gentle breeze outside so you can also wear a hat or a fancy pamela if you want.';
+        sentenceC = ' There is just a gentle breeze outside but it is too hot to go out... wait a couple of hours. Have a siesta!';
 
-    } else if (speed>10 && speed<=14) {
+    } else if (speed <= 10 && temp > 22 && temp < 35) {
 
-    sentenceC = ' Wear a hat at your own risk. it could fly because it is a bit windy outside.';
+        sentenceC = ' It is warm and there is just a gentle breeze. You can also wear a hat or a fancy pamela if you want...';
+    
+    } else if (speed <= 10) {
 
+        sentenceC = ' You\'ll feel a gentle breeze so you can also wear a hat or a fancy pamela if you want.';
+    
+    }else if (speed>10 && speed<=14) {
+
+        sentenceC = ' Wear a hat at your own risk. it could fly because it is a bit windy outside.';
+    
     } else if (rain > 0 && speed>14 && speed<=17) {
 
-    sentenceC = ' Ideally, you would use an umbrella but the wind is strong outside. Don\'t use it unless you\'d like a challenge. It is very likely it will end up in a bin...';
+        sentenceC = ' Ideally, you would use an umbrella but the wind is strong outside. Don\'t use it unless you\'d like a challenge. It is very likely it will end up in a bin...';
 
     } else if (speed>17) {
 
-    sentenceC = ' DON\'T GO OUT UNLESS YOU WANT TO FLY.';
+        sentenceC = ' DON\'T GO OUT UNLESS YOU WANT TO FLY.';
 
     } ;
 
@@ -135,3 +144,5 @@ document.querySelector('.search button').addEventListener("click", function() {
     search();
     weatherInfo(city);
 });
+
+
