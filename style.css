@@ -1,0 +1,100 @@
+
+.bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+  }
+
+.cardo-regular {
+    font-family: "Cardo", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+.cardo-bold {
+    font-family: "Cardo", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+.cardo-regular-italic {
+    font-family: "Cardo", serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+
+h2 {
+    text-align: center;
+    font-size: 45px;
+    color:lightgoldenrodyellow;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    align-content: center;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    height: 100vh;
+    background-color:lightgoldenrodyellow;
+
+  }
+
+  
+.main-box {
+    background-color: lightsalmon;
+    height: 100%;
+    width: 100%;
+    padding: 2.5em;
+    max-width: 350px;
+    max-height: 600px;
+    font-family: "Cardo", serif;
+    font-weight: 500;
+    font-style: normal;
+    color: lightgoldenrodyellow;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.search-bar {
+    align-content: center;
+    width: 100%;
+    margin-right: 0.25em;
+    height: 35px;
+    font-size: 20px;
+    background-color: lightgoldenrodyellow;
+    border-radius: 10px;
+    border-style: double;
+    color: rgb(201, 109, 73);
+
+}
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    height: 40px;
+    width: 130px;
+    background-color:lightgoldenrodyellow;
+    font-size: 20px;
+    font-family: "Cardo", serif;
+    font-weight: 700;
+    font-style: bold;
+    color: lightsalmon;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+  }
+
+  button:hover {
+    color: rgb(201, 109, 73);
+    border-radius: 10px;
+  }
