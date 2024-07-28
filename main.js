@@ -46,7 +46,7 @@ const weatherInfo = async function (city){
     } else if (speed > 14 && rain>0 && rain<=5){
         sentenceA = ' However, it is raining now. Put at least a waterproof jacket on top.';
     }else if (rain>5){
-        sentenceA = ' It is amazing outside, you could use your kayak!';
+        sentenceA = ' It is flooded outside! you could use your kayak!';
     };
 
 
