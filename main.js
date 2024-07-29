@@ -145,4 +145,9 @@ document.querySelector('.search button').addEventListener("click", function() {
     weatherInfo(city);
 });
 
-
+document.querySelector('.search-bar').addEventListener("keyup", function (event) {
+    if(event.key === 'Enter') {
+    search();
+    weatherInfo(city);
+    }
+});
