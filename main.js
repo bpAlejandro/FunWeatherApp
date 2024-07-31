@@ -1,26 +1,27 @@
+import API_KEY from './apikey.js';
 
-/*
-URL example: https://api.openweathermap.org/data/2.5/weather?q= + CARDIFF + &units=metric&appid= + APIKEY
-This will get the data using metric as units so we could use degrees.
-TO DO: City parameter is the imput from the user in the search bar.
-*/
 
-const apiKey = YOUR_API_KEY;
+const apiKey = API_KEY;
 const baseUrl = 'https://api.openweathermap.org/data/2.5/weather?q=';
 const midUrl = '&units=metric&appid=';
+
+let city = '';
 //NEXT UPDATE - CONDITIONS AVERAGE ON DAYS const const baseUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=';
 const weatherInfo = async function (city){
     const response = await fetch(
         baseUrl + city + midUrl + apiKey
     );
     const jsonResponse = await response.json();
+
     //find keys that you will use - Activate jsonResponse log below to find where are they located and convert them in variables.
-    console.log(jsonResponse);
+    // console.log(jsonResponse); //Activate this console.log to check the data in the console
+
     const name = jsonResponse.name;
     const temp = Math.floor(jsonResponse.main.temp);
     const speed = jsonResponse.wind.speed;
     const sky = jsonResponse.weather[0].description
     let rain = jsonResponse.rain;
+
 
     //rain object in the DATA has a property called 1h and cannot be reached - This is a transformation of the property name to be achievable
     if(rain === undefined) {
@@ -40,12 +41,17 @@ const weatherInfo = async function (city){
     let sentenceA = '';
     if (rain === 0) {
         sentenceA = ' No rain at first sight.'; 
-        //document.querySelector('.rain').innerHTML = ''
+
     } else if (rain>0 && rain<=5){
+
         sentenceA = ' However, it is raining now. Put at least a waterproof jacket on top or take an umbrella.';
+
     } else if (speed > 14 && rain>0 && rain<=5){
+
         sentenceA = ' However, it is raining now. Put at least a waterproof jacket on top.';
+
     }else if (rain>5){
+        
         sentenceA = ' It is flooded outside! you could use your kayak!';
     };
 
@@ -117,9 +123,7 @@ const weatherInfo = async function (city){
 
 
 
-
-
-    // checker in console
+    //Activate below checker in console
     //console.log(name, temp, speed, rain, sky);
 
     //Display data on HTML classes
@@ -135,11 +139,12 @@ const weatherInfo = async function (city){
 
 
 
-// Search-bar making it to work 
+// Search-bar making it to work
 const search = () => {
     city = document.querySelector('.search-bar').value;
+    
 }
-      
+
 document.querySelector('.search button').addEventListener("click", function() {
     search();
     weatherInfo(city);
@@ -151,3 +156,10 @@ document.querySelector('.search-bar').addEventListener("keyup", function (event)
     weatherInfo(city);
     }
 });
+
+
+/*
+URL example: https://api.openweathermap.org/data/2.5/weather?q= + CARDIFF + &units=metric&appid= + APIKEY
+This will get the data using metric as units so we could use degrees.
+TO DO: City parameter is the imput from the user in the search bar.
+*/
