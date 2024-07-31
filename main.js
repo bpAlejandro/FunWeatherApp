@@ -5,7 +5,7 @@ This will get the data using metric as units so we could use degrees.
 TO DO: City parameter is the imput from the user in the search bar.
 */
 
-const apiKey = YOUR_API_KEY;
+const apiKey = '627f597c5c5bec62f8a727ae9cd57f7b';
 const baseUrl = 'https://api.openweathermap.org/data/2.5/weather?q=';
 const midUrl = '&units=metric&appid=';
 //NEXT UPDATE - CONDITIONS AVERAGE ON DAYS const const baseUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=';
