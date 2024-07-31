@@ -22,7 +22,7 @@ The weather source data is from [https://openweathermap.org/](https://openweathe
 
 - Download all the files.
 
-- Replace the value of the myAPIkey variable inside the apikey.example.js with your own API Key from [https://openweathermap.org/](https://openweathermap.org/) and save the file as "apikey.js". *To find your own API key you only need to register, click on your profile and go to My API Keys.*
+- Replace the value of the API_KEY variable inside the apikey.example.js with your own API Key from [https://openweathermap.org/](https://openweathermap.org/) and save the file as "apikey.js". *To find your own API key you only need to register, click on your profile and go to My API Keys.*
     
 - Do the changes to want to the main.js code. Change the ranges or the sentences, add more of them. Be creative.
 
