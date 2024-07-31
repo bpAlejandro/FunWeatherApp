@@ -7,7 +7,7 @@ Live demo was deployed here: https://funweatherapp.netlify.app/
 
 # How to test it your own?
 ### IDE
-This app has been done in Visual Studio Code (v1.91.1)
+This app has been done in Visual Studio Code (v1.91.1) and can be deployed locally using the live server extension.
 
 The weather source data is from [https://openweathermap.org/](https://openweathermap.org/) using the url extension that retrieve the data in metric units.
 
@@ -20,11 +20,11 @@ The weather source data is from [https://openweathermap.org/](https://openweathe
 
 ### Steps to test it
 
-- Download the repository.
+- Download all the files.
 
-- Replace the API Key variable inside the main.js with your own API Key from [https://openweathermap.org/](https://openweathermap.org/) and save the file. *To find your own API key you only need to register, click on your profile and go to My API Keys.*
+- Replace the value of the myAPIkey variable inside the apikey.example.js with your own API Key from [https://openweathermap.org/](https://openweathermap.org/) and save the file as "apikey.js". *To find your own API key you only need to register, click on your profile and go to My API Keys.*
     
-- Do the changes to want to the main.js code. Change the ranges or the sentences, add more of them.
+- Do the changes to want to the main.js code. Change the ranges or the sentences, add more of them. Be creative.
 
 - I deployed the project folder in [Netlify](https://www.netlify.com/). However, you can also use it locally.
   *The easiest way of doing it locally is by opening the project folder in Visual Studio Code, install the ['Live Server' extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer), and use the live server icon to deploy the project locally on your main browser.*
