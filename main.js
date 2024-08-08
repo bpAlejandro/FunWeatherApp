@@ -23,19 +23,13 @@ const weatherInfo = async function (city){
     let rain = jsonResponse.rain;
 
 
-    //rain object in the DATA has a property called 1h and cannot be reached - This is a transformation of the property name to be achievable
-    if(rain === undefined) {
+    //rain object in the DATA can be undefined if there is no rain within 1h so I assigned the value 0 for these cases.
+    //When it is defined I assigned the value of its parameter 1h.
+    if(jsonResponse.rain === undefined) {
         rain = 0;
     } else {
-        let newRain = Object.defineProperty(
-            {},
-            'mm',
-            Object.getOwnPropertyDescriptor(jsonResponse.rain, '1h')
-          );
-          
-        rain = newRain.mm;
+        rain = jsonResponse.rain["1h"];
     }
-    
 
 
     let sentenceA = '';
